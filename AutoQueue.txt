@@ -1,0 +1,12 @@
+## Title: Auto Queue
+## Description: Allows you to automatically accept queues.
+## Author: QuaintShanty
+## Version: 1.0.00
+## APIVersion: 100023
+
+AutoQueue.xml
+
+Settings.lua
+Handler.lua
+
+AutoQueue.lua
