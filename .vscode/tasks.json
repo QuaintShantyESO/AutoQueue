@@ -1,0 +1,17 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "zip",
+      "type": "shell",
+      "command": "$version = Get-Content -Path ./AutoQueue.txt; $version = $version[3].Substring(12); Get-ChildItem -Path ../AutoQueue -Exclude @('*.vscode*', '*.git*') | Compress-Archive -DestinationPath ../AutoQueue-${version}.zip",
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
+}
