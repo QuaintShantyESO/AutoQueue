@@ -14,18 +14,18 @@ function Handler.AutoAcceptActivity(eventCode, status)
     return
   end
 
-  if not Settings.vars.autoQueue then
-    if not Settings.vars.muted then
-      d('This queue was not automatically accepted. To change that, type /autoqueue')
-    end
-    return
-  end
-
   if IsActiveWorldBattleground() then
     return
   end
 
   if HasLFGReadyCheckNotification() then
+    if not Settings.vars.autoQueue then
+      if not Settings.vars.muted then
+        d('This queue was not automatically accepted. To change that, type /autoqueue')
+      end
+      return
+    end
+
     if not Settings.vars.muted then
       d('Automatically accepted the queue. To change that, type /autoqueue')
     end
