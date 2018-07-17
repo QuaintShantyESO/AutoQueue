@@ -6,7 +6,16 @@
     {
       "label": "zip",
       "type": "shell",
-      "command": "$version = Get-Content -Path ./AutoQueue.txt; $version = $version[3].Substring(12); Get-ChildItem -Path ../AutoQueue -Exclude @('*.vscode*', '*.git*') | Compress-Archive -DestinationPath ../AutoQueue-${version}.zip",
+      "command": [
+        "$version = Get-Content -Path ./AutoQueue.txt;",
+        "$version = $version[3].Substring(12);",
+        "Copy-Item -Path ../AutoQueue -Destination ../AutoQueue-TMP/AutoQueue -Recurse -Force -Container;",
+        "Remove-Item -Path ../AutoQueue-TMP/AutoQueue/.vscode -Recurse;",
+        "Remove-Item -Path ../AutoQueue-TMP/AutoQueue/.git -Recurse -Force;",
+        "Get-Item -Path ../AutoQueue-TMP/AutoQueue | ",
+        "Compress-Archive -DestinationPath ../AutoQueue-${version}.zip;",
+        "Remove-Item -Path ../AutoQueue-TMP -Recurse -Force;"
+      ],
       "problemMatcher": [],
       "group": {
         "kind": "build",
