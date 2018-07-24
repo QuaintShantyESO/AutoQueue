@@ -21,13 +21,9 @@ function Handler.AutoAcceptActivity(eventCode, status)
   if HasLFGReadyCheckNotification() then
     if not Settings.vars.autoQueue then
       if not Settings.vars.muted then
-        d('This queue was not automatically accepted. To change that, type /autoqueue')
+        d('This queue was not automatically accepted. Turn it off with /autoqueue.')
       end
       return
-    end
-
-    if not Settings.vars.muted then
-      d('Automatically accepted the queue. To change that, type /autoqueue')
     end
     AcceptLFGReadyCheckNotification()
   end
