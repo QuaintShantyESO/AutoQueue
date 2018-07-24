@@ -3,7 +3,7 @@ local AutoQueue = _G['AutoQueue']
 
 -- Addon details
 AutoQueue.name = 'AutoQueue'
-AutoQueue.version = '1.0.02'
+AutoQueue.version = '1.0.03'
 AutoQueue.slash = '/autoqueue'
 
 -- AutoQueue.db = 'AQStorage'
