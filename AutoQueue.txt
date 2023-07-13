@@ -1,8 +1,8 @@
 ## Title: Auto Queue
 ## Description: Allows you to automatically accept queues.
 ## Author: QuaintShanty
-## Version: 1.0.04
-## APIVersion: 100024
+## Version: 1.0.05
+## APIVersion: 101038
 ## SavedVariables: AQStorage
 
 AutoQueue.xml
